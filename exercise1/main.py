@@ -8,7 +8,7 @@ if __name__ == '__main__':
     app = QApplication()
     axes = SimulateAxes()
     axes.start()
-    window = ExerciseGui()
+    window = ExerciseGui(axes)
     window.show()
     return_code = app.exec()
     axes.stop()
