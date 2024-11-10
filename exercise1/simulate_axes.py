@@ -55,7 +55,6 @@ class SimulateAxes(QObject):
         print("Axes simulator Thread started")
         while not self.stop_flag:
 
-
             change_requested = self.x != self.set_x_pos or self.y != self.set_y_pos
 
             if self.x < self.set_x_pos:
