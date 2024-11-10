@@ -25,9 +25,11 @@ class ExerciseGui(QMainWindow):
         self.slider_right.valueChanged.connect(self.set_right_position)
         # min 0.0, max 4.0 mm, step 0.1 mm
         self.slider_left.setMinimum(0)
+        self.slider_left.setFixedHeight(200)
         self.slider_left.setMaximum(41)
         self.slider_left.setSingleStep(1)
         self.slider_right.setMinimum(0)
+        self.slider_right.setFixedHeight(200)
         self.slider_right.setMaximum(41)
         self.slider_right.setSingleStep(1)
 
@@ -55,6 +57,8 @@ class ExerciseGui(QMainWindow):
     def home_actuators(self):
         self.statusBar().showMessage("Home button clicked")
         self.controller.home()
+        self.slider_left.setValue(0)
+        self.slider_right.setValue(0)
         print("Home button clicked")
 
     def set_left_position(self, value):

@@ -20,6 +20,9 @@ class SimulateAxes(QObject):
         self.max = 40
         self.stop_flag = False
 
+    def __repr__(self):
+        return f"X: {self.x}, Y:{self.y}"
+
     def move_x(self, position: int):
         if position < 0 or position > self.max:
             return
@@ -36,8 +39,8 @@ class SimulateAxes(QObject):
         return self.x, self.y
 
     def home(self):
-        self.x = 0
-        self.x = 0
+        self.set_x_pos = 0
+        self.set_y_pos = 0
         self.referenced = True
 
     def start(self):
