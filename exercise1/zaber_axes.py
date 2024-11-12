@@ -13,14 +13,14 @@ class ZaberAxes:
         self.controller = self.connection.detect_devices()[0]
         self.controller_connected = True
 
-        self.left = self.controller.get_axis(1)
-        self.right = self.controller.get_axis(2)
+        self.left_axis = self.controller.get_axis(1)
+        self.right_axis = self.controller.get_axis(2)
 
-    def move_left(self, value):
-        self.left.move_absolute(value)
+    def move_left(self, position):
+        self.left_axis.move_absolute(position, wait_until_idle=False)
 
-    def move_y(self, value):
-        self.right.move_absolute(value)
+    def move_right(self, position):
+        self.right_axis.move_absolute(position, wait_until_idle=False)
 
     def home(self):
         self.controller.all_axes.home()
@@ -28,7 +28,7 @@ class ZaberAxes:
     def get_positions(self: tuple[float, float]):
         left_pos = self.left.get_position(Units.LENGTH_MILLIMETRES)
         right_pos = self.left.get_position(Units.LENGTH_MILLIMETRES)
-        return (left_pos, right_pos)
+        return left_pos, right_pos
 
     def close(self):
         if self.controller is not None:

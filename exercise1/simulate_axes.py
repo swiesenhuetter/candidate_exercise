@@ -23,13 +23,13 @@ class SimulateAxes(QObject):
     def __repr__(self):
         return f"X: {self.x}, Y:{self.y}"
 
-    def move_x(self, position: int):
+    def move_left(self, position: int):
         if position < 0 or position > self.max:
             return
         else:
             self.set_x_pos = position
 
-    def move_y(self, position: int):
+    def move_right(self, position: int):
         if position < 0 or position > self.max:
             return
         else:
