@@ -23,17 +23,25 @@ class SimulateAxes(QObject):
     def __repr__(self):
         return f"X: {self.x}, Y:{self.y}"
 
-    def move_left(self, position: int):
+    def block_until_target_reached(self):
+        while self.x != self.set_x_pos or self.y != self.set_y_pos:
+            sleep(0.1)
+
+    def move_left(self, position: int, blocking=False):
         if position < 0 or position > self.max:
             return
         else:
             self.set_x_pos = position
+            if blocking:
+                self.block_until_target_reached()
 
-    def move_right(self, position: int):
+    def move_right(self, position: int, blocking=False):
         if position < 0 or position > self.max:
             return
         else:
             self.set_y_pos = position
+            if blocking:
+                self.block_until_target_reached()
 
     def get_position(self):
         return self.x, self.y
