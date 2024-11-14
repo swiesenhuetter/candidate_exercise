@@ -4,7 +4,7 @@ As part of our interview process, we ask candidates to complete a coding exercis
 problem-solving skills, coding style, and familiarity with Python. This exercise should be completed in Python 3.
 
 # Problem Statement
-You are tasked with creating a Python program to solve the following problem:
+You are tasked with modifying a Python program to solve the following problem:
 * communicate with a motion controller
 * get access to the controller and the axes (two motors)
 * move an actuator (use absolute positioning) 
