@@ -21,9 +21,10 @@ to access the controller.
 
 We will provide a motion controller simulator to show the capabilities.
 
+[Documentation for the zaber-motion package](https://software.zaber.com/motion-library/docs/tutorials/install/py)
+
 Q: How yould you set up your Python environment? 
-Q: What does TDD mean, do you know the pytest package?
-Q: What can we say about test_move_left?
+Task: Implement position setting and display 
 Q: how to test hardware and GUI code? 
 
 
